@@ -1,0 +1,22 @@
+.contactList {
+  display: block;
+  width: 320px;
+}
+.btn {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.contactitem:not(:last-child) {
+  margin-bottom: 10px;
+}
+.btn:hover {
+  background-color: red;
+}
+
+.contactitem:hover {
+  color: red;
+}
+
+.contactitem {
+  width: auto;
+}

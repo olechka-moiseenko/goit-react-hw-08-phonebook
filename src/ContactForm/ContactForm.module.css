@@ -1,0 +1,23 @@
+.form {
+  display: block;
+  border: 2px solid grey;
+  width: 320px;
+  padding: 10px 10px 30px 10px;
+  background-color: orange;
+}
+.formItem {
+  background-color: orange;
+  display: block;
+  width: 180px;
+  height: 25px;
+}
+.btn {
+  margin-top: 10px;
+}
+.number {
+  margin-top: 10px;
+}
+
+.btn:focus {
+  background-color: chartreuse;
+}
