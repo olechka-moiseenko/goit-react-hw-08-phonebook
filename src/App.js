@@ -1,5 +1,5 @@
 import { Switch } from "react-router-dom";
-import SingUp from "../src/SingUp/SignUp";
+import SingUp from "../src/SingUp/SingUp";
 import SingIn from "../src/SignIn/SignIn";
 import ContactForm from "../src/ContactForm/ContactForm";
 import React, { Suspense, useEffect } from "react";
@@ -24,7 +24,12 @@ function App() {
       ) : (
         <Switch>
           <Suspense fallback="Loading...">
-            <PublicRoute exact path={"/"} redirectTo="/contactform" restricted>
+            <PublicRoute
+              exact
+              path="goit-react-hw-08-phonebook"
+              redirectTo="/contactform"
+              restricted
+            >
               <SingUp />
             </PublicRoute>
             <PublicRoute
