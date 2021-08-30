@@ -1,6 +1,6 @@
 import { Switch } from "react-router-dom";
 import SingUp from "../src/SingUp/SignUp";
-import SignIn from "../src/SignIn/SignIn";
+import SingIn from "../src/SignIn/SignIn";
 import ContactForm from "../src/ContactForm/ContactForm";
 import React, { Suspense, useEffect } from "react";
 import PrivateRoute from "../src/PrivateRoute";
@@ -24,7 +24,7 @@ function App() {
       ) : (
         <Switch>
           <Suspense fallback="Loading...">
-            <PublicRoute exact path="/" redirectTo="/contactform" restricted>
+            <PublicRoute exact path={"/"} redirectTo="/contactform" restricted>
               <SingUp />
             </PublicRoute>
             <PublicRoute
@@ -33,7 +33,7 @@ function App() {
               redirectTo="/contactform"
               restricted
             >
-              <SignIn />
+              <SingIn />
             </PublicRoute>
             <PrivateRoute path="/contactform">
               <ContactForm />
