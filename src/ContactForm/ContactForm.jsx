@@ -42,21 +42,22 @@ export default function ContactForm() {
       <AppBarMenu />
       <form onSubmit={handleSubmit} className={s.form}>
         <Toaster />
-        <span>Name</span>
-        <label className={s.formItem}>
+        <label className={s.label}>Name</label>
+        {/* <label className={s.formItem}> */}
+        <input
+          className={s.input}
+          autoComplete="off"
+          type="text"
+          name="inputName"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+          required
+          id={nameInputId}
+        />
+        <label className={s.label}>
+          Number
           <input
-            autoComplete="off"
-            type="text"
-            name="inputName"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-            required
-            id={nameInputId}
-          />
-        </label>
-        <span className={s.number}>Number</span>
-        <label className={s.formItem}>
-          <input
+            className={s.input}
             autoComplete="off"
             type="tel"
             name="inputNumber"

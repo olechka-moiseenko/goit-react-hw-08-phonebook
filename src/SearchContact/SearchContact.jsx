@@ -8,8 +8,9 @@ export default function Filter() {
   return (
     <div>
       <p className={s.title}>Find contacts by name</p>
-      <label>
+      <label className={s.label}>
         <input
+          className={s.input}
           type="text"
           onChange={(evt) =>
             dispatch(filter(evt.currentTarget.value.toLocaleLowerCase()))

@@ -1,11 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
+import s from "../AppBar/AppBar.module.css";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-// import MenuIcon from '@material-ui/icons/Menu';
 import aut_operation from "../redux/slices/authentication/aut_operation";
 import { useDispatch, useSelector } from "react-redux";
 import authSelectors from "../redux/slices/authentication/auth-selectors";
@@ -32,7 +32,7 @@ export default function AppBarMenu() {
   };
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={s.header} position="static">
         <Toolbar>
           <IconButton
             edge="start"
