@@ -4,6 +4,7 @@
 }
 
 .label {
+  /* text-align: center; */
   display: block;
   margin-bottom: 20px;
   color: #757575;
