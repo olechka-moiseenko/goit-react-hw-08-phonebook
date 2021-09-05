@@ -1,11 +1,16 @@
-.title {
+/* .title {
   font-weight: 500;
   font-size: 18px;
   margin: 0;
+} */
+.wrapper {
+  border-bottom: 1px solid #000;
+  width: 450px;
+  margin-bottom: 10px;
 }
 
 .label {
-  display: block;
+  /* display: block; */
   margin-top: 10px;
   color: #757575;
   font-weight: 500;
@@ -19,6 +24,7 @@
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  font-style: italic;
   font-size: 15px;
 }
 

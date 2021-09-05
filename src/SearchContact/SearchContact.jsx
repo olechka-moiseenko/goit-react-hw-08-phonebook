@@ -6,7 +6,7 @@ import { filter } from "../redux/slices/filter";
 export default function Filter() {
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className={s.wrapper}>
       <p className={s.title}>Find contacts by name</p>
       <label className={s.label}>
         <input

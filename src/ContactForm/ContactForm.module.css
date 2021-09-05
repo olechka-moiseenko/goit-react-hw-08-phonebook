@@ -1,51 +1,104 @@
-.form {
-  margin-top: 10px;
-  margin-bottom: 30px;
+/* .form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 1px solid #aac;
+  box-shadow: 1px 1px 5px #aac;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .label {
-  /* text-align: center; */
-  display: block;
-  margin-bottom: 20px;
-  color: #757575;
-  font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
+  color: #343;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .input {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  width: 100%;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
+  padding: 5px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 8px;
+  border: 1px solid #aaa;
 }
 
-.input:focus {
-  outline-color: #f50057;
+.input[id='number'] {
+  margin-bottom: 20px;
+}
+
+.input::placeholder {
+  font-style: italic;
 }
 
 .btn {
-  padding: 10px 20px;
-  background-color: #f50057;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px #aac;
+  color: #eee;
+  font-weight: bold;
   border: none;
-  outline: none;
-  opacity: 0.8;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  background-color: #44c;
   cursor: pointer;
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
 }
 
-.btn:hover,
-.btn:focus {
-  opacity: 1;
+.btn:active {
+  background-color: #22a;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 0;
+  padding: 20px;
+  width: 50%;
+  min-height: 300px;
+  justify-content: space-evenly;
+  box-shadow: 1px 1px 5px #333;
+  border-radius: 8px;
+  background: #fcfcfc;
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 1px 1px 10px blue, 1px 1px 5px black, 1px 1px 7px yellow;
+  margin-bottom: 16px;
+}
+
+.label {
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 10px blue, 1px 1px 5px black, 1px 1px 7px yellow;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 14px 0 30px;
+  border-radius: 5px;
+  border: 1px solid #555;
+}
+
+.input::placeholder {
+  color: #ccc;
+}
+
+.btn {
+  width: 100%;
+  display: block;
+  border: none;
+  background: linear-gradient(90deg, #55c, #88e, #55c);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
 }
