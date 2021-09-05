@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
 
@@ -12,29 +13,49 @@ const token = {
   },
 };
 
-const register = createAsyncThunk("auth/register", async (credentials) => {
-  try {
-    const { data } = await axios.post("/users/signup", credentials);
-    token.set(data.token);
-    console.log(data);
-    return data;
-  } catch (error) {}
-});
+const register = createAsyncThunk(
+  "auth/register",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/users/signup", credentials);
+      token.set(data.token);
+      toast.success("You are successfully registered");
+      // console.log(data);
+      return data;
+    } catch (error) {
+      toast.error("Please check, may be you registered");
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-const logIn = createAsyncThunk("auth/logIn", async (credentials) => {
-  try {
-    const { data } = await axios.post("/users/login", credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {}
-});
+const logIn = createAsyncThunk(
+  "auth/logIn",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      // console.log(credentials);
+      const { data } = await axios.post("/users/login", credentials);
+      token.set(data.token);
+      toast.success("You are successfully loged in");
+      return data;
+    } catch (error) {
+      toast.error("Please, try again");
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-const logOut = createAsyncThunk("auth/logOut", async () => {
-  try {
-    await axios.post("/users/logout");
-    token.unset();
-  } catch (error) {}
-});
+const logOut = createAsyncThunk(
+  "auth/logOut",
+  async (_, { rejectWithValue }) => {
+    try {
+      await axios.post("/users/logout");
+      token.unset();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const fetchCurrentUser = createAsyncThunk(
   "auth/refresh",
@@ -50,7 +71,9 @@ const fetchCurrentUser = createAsyncThunk(
     try {
       const { data } = await axios.get("/users/current");
       return data;
-    } catch (error) {}
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );
 
