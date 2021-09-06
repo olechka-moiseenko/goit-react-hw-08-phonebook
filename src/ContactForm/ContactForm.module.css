@@ -63,14 +63,6 @@
   background: #fcfcfc;
 }
 
-.heading {
-  text-align: center;
-  font-size: 32px;
-  color: #fff;
-  text-shadow: 1px 1px 10px blue, 1px 1px 5px black, 1px 1px 7px yellow;
-  margin-bottom: 16px;
-}
-
 .label {
   width: 100%;
   font-size: 20px;
